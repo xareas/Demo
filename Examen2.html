@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .error {
+        background-color: red;
+        border: 3px solid crimson;
+    }
+</style>
+<body>
+<input type="text" name="nombre" id="nombre">
+<input type="text" name="apellido" id="apellido">
+<button type="button">Enviar</button>
+
+
+<script>
+    window.onload = function () {
+
+
+        var nombre = document.getElementById('nombre');
+
+        nombre.addEventListener('blur', function (){
+
+            if(nombre.value.length==0){
+                nombre.classList.add('error');
+            }
+            else {
+                nombre.classList.remove('error');
+            }
+        });
+
+
+        var Customer = function () {
+           var nombre ='contoso';
+            return {
+                  getNombre: function () {
+                     return nombre;
+               },
+                 setNombre: function (newName) {
+                    nombre =newName;
+                }
+
+            };
+
+        }();
+
+        alert(Customer.nombre);
+
+    };
+
+</script>
+</body>
+</html>

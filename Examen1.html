@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de examen</title>
+    <style>
+
+        .container {
+            width: 100px;
+            background: #999;
+            margin-bottom: 10px;
+            border: 1px solid #fffacd;
+        }
+
+        .hyphenation {
+            word-break: break-all;
+            word-wrap: break-word;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container hyphenation">Esternocleidomastoideo</div>
+<p>Con <code>word-break: break-all</code> e <code>hyphens: auto</code></p>
+<div class="container hyphenation" lang="es">Esternocleidomastoideo</div>
+</body>
+</html>

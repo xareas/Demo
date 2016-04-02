@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validaciones</title>
+    <style>
+        input:invalid{
+            border-color: red;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="text" id="nombre" pattern="[a-z]{1,15}" title="Error al Validar el nombre">
+    <input type="submit" value="Enviar Datos">
+</form>
+<script>
+    var nombre = document.getElementById('nombre');
+
+    nombre.oninvalid = function (e) {
+       event.target.setCustomValidity('El nombre debe estar en miniscula con 15 caracteres como maximo');
+    };
+
+
+</script>
+</body>
+</html>

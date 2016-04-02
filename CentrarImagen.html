@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Document</title>
+</head>
+
+<link href="estilo.css" rel="stylesheet">
+<body>
+
+<div id="myDiv">
+
+    <input type="PASSWORD" id="securityCode" maxlength="6" placeholder="ENTER EL PINCOD"><br/>
+    <input type="number" id="txtvalor" placeholder="numeros"><br>
+    <input type="search" placeholder="introdusca aca el valor a buscar"><br>
+    <input type="url" placeholder="url"><br>
+    <input type="email" placeholder="email"><br>
+    <input type="tel" name="telfono" id="" placeholder="telefono"><br>
+    <input type="month" name="mes" id="mes" placeholder="mes" itemscope="numeric">
+    <input type="range" name="rango" id="rango" MIN="1" MAX="10" value="5" placeholder="rango"><br>
+    <input type="text" name="texto" id="texto" required="required">
+    <input type="button" id="myButton" value="click aca">
+    <hgroup>
+        <h1>Primer elemento</h1>
+        <h2>Segundo Elemento</h2>
+        <h3>Tercer Elemento</h3>
+    </hgroup>
+</div>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded',function () {
+
+        var elButton = document.getElementById('myButton');
+        var elDiv = document.getElementById('myDiv');
+
+        elButton.addEventListener('click', function (event) {
+           console.log('estoy en el click del boton');
+
+            console.log(document.getElementById('rango').value);
+            console.log(document.getElementById('mes').value);
+            document.dispatchEvent(myCustomEvent);
+           //event.stopImmediatePropagation();
+        },false);
+
+        elDiv.addEventListener('click', function () {
+            console.log('estoy en el click del div');
+        },false);
+
+        var myCustomEvent = new CustomEvent('changeTab',{
+            bubbles:true,
+            cancelable:false,
+            detail:{tabAnterior:1, tabNuevo:2}
+        });
+
+        document.addEventListener('changeTab',function (e) {
+            console.log(e.detail);
+        });
+
+
+
+    },false);
+
+</script>
+
+
+
+</body>
+</html>

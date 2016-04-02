@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="city" id="city">
+    <option >opcion 1</option>
+    <option >opcion 2</option>
+    <option >opcion 3</option>
+    <option value="4" >opcion 4</option>
+</select>
+
+<input id="button-js" type="button" value="Enviar Informacion aca" >
+<script>
+
+    window.onload= function () {
+
+        var boton = document.getElementById('button-js');
+
+        boton.onclick = function () {
+            made(document.getElementById('city'),'');
+
+        };
+
+        function made(item,msg) {
+            console.log(item);
+        }
+
+
+    };
+
+
+
+
+</script>
+
+</body>
+</html>
